@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Phases</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-bg: #1e3a8a;
+            --secondary-bg: #3b82f6;
+            --text-color: #ffffff;
+            --card-light-bg: #f3f4f6;
+            --card-light-text: #1f2937;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+        }
+        .container-bg {
+            background-color: var(--card-light-bg);
+            border-radius: 0.75rem;
+            color: var(--card-light-text);
+        }
+        /* Fade-in animation for cards */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .phase-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent; /* Added for the new hover effect */
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            border-color: #3b82f6; /* New professional hover effect */
+        }
+    </style>
+</head>
+<body class="bg-blue-900 text-white min-h-screen p-4 sm:p-6">
+
+    <main class="container mx-auto py-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-2">A Strategic Framework for Action</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">Click on a phase below to learn more about the actions and priorities involved.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Before Disaster Box -->
+            <div class="phase-card container-bg p-8 shadow-md text-center animate-fadeIn" style="animation-delay: 0.1s;">
+                <h3 class="text-2xl font-bold mb-4 text-blue-800">Before Disaster</h3>
+                <p class="text-gray-700 mb-6">Focuses on preparedness and mitigation to reduce the impact of a future event. This phase includes planning, training, and building resilience.</p>
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-colors transform hover:scale-105">Learn More</a>
+            </div>
+
+            <!-- During Disaster Box -->
+            <div class="phase-card container-bg p-8 shadow-md text-center animate-fadeIn" style="animation-delay: 0.3s;">
+                <h3 class="text-2xl font-bold mb-4 text-blue-800">During Disaster</h3>
+                <p class="text-gray-700 mb-6">Immediate actions taken to save lives and prevent further damage. Key activities include real-time response, search and rescue, and emergency relief distribution.</p>
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-colors transform hover:scale-105">Learn More</a>
+            </div>
+
+            <!-- After Disaster Box -->
+            <div class="phase-card container-bg p-8 shadow-md text-center animate-fadeIn" style="animation-delay: 0.5s;">
+                <h3 class="text-2xl font-bold mb-4 text-blue-800">After Disaster</h3>
+                <p class="text-gray-700 mb-6">Focuses on long-term recovery and rebuilding. This includes damage assessment, rehabilitation of infrastructure, and providing support services to affected communities.</p>
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-colors transform hover:scale-105">Learn More</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

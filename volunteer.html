@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer: The Heart of a Community</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .section-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Simple modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 24px;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <main class="container mx-auto px-4 py-12 md:py-16">
+        
+        <!-- Hero Section -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                Volunteer: The Heart of a Community
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Volunteering is a powerful way to make a difference. Find out how you can lend your time and skills to help those in need.
+            </p>
+        </div>
+
+        <!-- Why Volunteer Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-hand-holding-heart text-sky-500 mr-3"></i>The Impact of Your Time
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Community Support -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-users text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Build Community</h3>
+                    <p class="text-gray-600 text-sm">Volunteering strengthens the bonds within a community, creating a supportive network for everyone.</p>
+                </div>
+                
+                <!-- Card 2: Personal Growth -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-seedling text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Grow Skills</h3>
+                    <p class="text-gray-600 text-sm">Gain new skills, connect with new people, and boost your own well-being by helping others.</p>
+                </div>
+
+                <!-- Card 3: Direct Impact -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-bullseye text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Make a Direct Impact</h3>
+                    <p class="text-gray-600 text-sm">Whether it's serving food or helping with cleanup, your actions can directly improve someone's life.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Volunteering Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-tasks text-sky-500 mr-3"></i>Find Your Opportunity
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <p class="text-gray-600">There are many different ways to volunteer, depending on your interests and available time:</p>
+                    <ul class="list-none space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Disaster Relief:</b> Help with cleanup, sorting donations, or supporting displaced families.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Shelters and Aid Centers:</b> Assist with day-to-day operations at local shelters, food banks, or community centers.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Animal Welfare:</b> Care for animals at local shelters or support wildlife rescue efforts.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Environmental Projects:</b> Participate in park cleanups, tree-planting, or conservation initiatives.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="bg-sky-500 text-white p-6 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-2">Ready to Start?</h3>
+                        <p class="text-sm">Many organizations are looking for people just like you. The best way to begin is by reaching out to local groups and non-profits.</p>
+                        <button onclick="showModal('getStarted')" class="mt-4 bg-white text-sky-500 font-bold py-2 px-6 rounded-full transition hover:bg-gray-100">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Resources Section -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-globe text-sky-500 mr-3"></i>Find Opportunities Near You
+            </h2>
+            <div class="text-center">
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                    Use these resources to find local volunteering opportunities that match your interests.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <button onclick="showModal('localOrgs')" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full transition hover:bg-sky-600 text-lg shadow-md">
+                        Find Local Organizations
+                    </button>
+                    <button onclick="showModal('onlinePlatforms')" class="bg-white text-sky-500 font-bold py-3 px-8 rounded-full transition hover:bg-gray-100 border border-sky-500 text-lg shadow-md">
+                        Explore Online Platforms
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Modal -->
+    <div id="volunteerModal" class="modal">
+        <div class="modal-content">
+            <span class="absolute top-4 right-4 text-gray-500 text-2xl font-bold cursor-pointer hover:text-gray-800" onclick="closeModal()">&times;</span>
+            <div class="p-4">
+                <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+                <p id="modalText" class="text-gray-700 mb-6"></p>
+                <button onclick="closeModal()" class="w-full bg-sky-500 text-white font-bold py-2 px-4 rounded-full transition hover:bg-sky-600">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Shows the modal with specific content
+        function showModal(type) {
+            const modal = document.getElementById('volunteerModal');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            
+            // Set modal content based on the button clicked
+            switch(type) {
+                case 'getStarted':
+                    title.innerText = 'Take the First Step';
+                    text.innerText = 'The best way to get started is to contact local non-profit organizations, such as charities, hospitals, or community centers, and ask about their volunteer programs.';
+                    break;
+                case 'localOrgs':
+                    title.innerText = 'Find Local Opportunities';
+                    text.innerText = 'Search online for local chapters of national organizations like the Red Cross, Salvation Army, or Habitat for Humanity. Your city or county government website may also have resources.';
+                    break;
+                case 'onlinePlatforms':
+                    title.innerText = 'Explore Online Platforms';
+                    text.innerText = 'Websites like VolunteerMatch, Idealist, and All for Good list thousands of volunteer opportunities by location and interest.';
+                    break;
+            }
+
+            modal.style.display = 'block';
+        }
+
+        // Hides the modal
+        function closeModal() {
+            const modal = document.getElementById('volunteerModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('volunteerModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

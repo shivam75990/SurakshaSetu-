@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Details</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-bg: #1e3a8a;
+            --secondary-bg: #3b82f6;
+            --text-color: #ffffff;
+            --card-light-bg: #f3f4f6;
+            --card-light-text: #1f2937;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+        }
+        .container-bg {
+            background-color: var(--card-light-bg);
+            border-radius: 0.75rem;
+            color: var(--card-light-text);
+        }
+    </style>
+</head>
+<body class="bg-blue-900 text-white min-h-screen p-4 sm:p-6">
+
+    <!-- Header -->
+    <header class="bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 mb-6">
+        <div class="container mx-auto flex items-center justify-between">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white">Incident Details</h1>
+            <div class="flex space-x-4">
+                <a href="incident.html" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-full px-4 py-2 transition-colors">Back to Incidents</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+        <div class="mb-8 text-center">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-2">Detailed Report for Incident INC-001</h2>
+            <p class="text-gray-300">Comprehensive view of a critical incident.</p>
+        </div>
+
+        <!-- Incident Details Container -->
+        <div class="container-bg p-6 shadow-md grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Left Column: Key Details -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Incident Information</h3>
+                <dl class="space-y-4">
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Incident ID</dt>
+                        <dd class="text-lg font-semibold text-gray-900">INC-001</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Type</dt>
+                        <dd class="text-lg font-semibold text-gray-900">Earthquake</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Severity</dt>
+                        <dd class="text-lg font-semibold text-red-600">Critical</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Status</dt>
+                        <dd class="text-lg font-semibold text-yellow-600">Ongoing</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Reported</dt>
+                        <dd class="text-lg font-semibold text-gray-900">September 20, 2025, 10:30 AM</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <!-- Right Column: Location and Response -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Location & Response</h3>
+                <dl class="space-y-4">
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Location</dt>
+                        <dd class="text-lg font-semibold text-gray-900">Delhi, India</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Affected Area</dt>
+                        <dd class="text-lg font-semibold text-gray-900">Central Delhi, Connaught Place</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Assigned Teams</dt>
+                        <dd class="text-lg font-semibold text-gray-900">Search & Rescue, Medical, Fire Dept</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-500 text-sm font-medium">Current Notes</dt>
+                        <dd class="text-gray-700">Initial reports indicate significant structural damage to several buildings. Power outages are widespread. Teams are on site assessing the situation and beginning rescue operations.</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

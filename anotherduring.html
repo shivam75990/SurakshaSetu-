@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Response Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-50 */
+            color: #1f2937; /* gray-800 */
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .section-header {
+            border-left: 5px solid #3b82f6; /* blue-500 */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff; /* white */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.08);
+        }
+        .btn {
+            transition: transform 0.2s ease-in-out;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .blink-me {
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            max-width: 90%;
+            text-align: center;
+            color: #1f2937;
+        }
+        .flashlight-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 99;
+            animation: pulse-light 1s infinite;
+        }
+        @keyframes pulse-light {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+        /* New Animations */
+        .animated-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <!-- Flashlight Overlay -->
+    <div id="flashlight-overlay" class="flashlight-overlay"></div>
+
+    <main class="container mx-auto px-4 py-12 md:py-16">
+        
+        <!-- Hero Section -->
+        <div class="text-center mb-12 animated-section" data-scroll>
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                During a Disaster: Act Now
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                In an emergency, every second counts. This guide provides immediate, actionable steps and tools to help you and your family respond effectively and stay safe.
+            </p>
+        </div>
+
+        <!-- Section: Emergency Helplines -->
+        <section class="mb-16 animated-section" data-scroll>
+            <h2 class="text-3xl font-bold mb-8 section-header text-gray-900">
+                <i class="fas fa-phone-volume text-blue-500 mr-3"></i>Emergency Helplines (India)
+            </h2>
+            <p class="text-gray-600 mb-6">Tap the buttons below to call for immediate assistance. These numbers are universal for mobile devices.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Button: Police -->
+                <a href="tel:112" class="btn card bg-indigo-600 text-white rounded-2xl p-6 flex flex-col items-center text-center hover:bg-indigo-700">
+                    <i class="fas fa-hand-holding-box text-4xl mb-3"></i>
+                    <h3 class="text-2xl font-bold">Police</h3>
+                    <p class="text-sm">Dial 112</p>
+                </a>
+                
+                <!-- Button: Fire -->
+                <a href="tel:101" class="btn card bg-rose-600 text-white rounded-2xl p-6 flex flex-col items-center text-center hover:bg-rose-700">
+                    <i class="fas fa-fire-extinguisher text-4xl mb-3"></i>
+                    <h3 class="text-2xl font-bold">Fire</h3>
+                    <p class="text-sm">Dial 101</p>
+                </a>
+                
+                <!-- Button: Ambulance -->
+                <a href="tel:108" class="btn card bg-green-600 text-white rounded-2xl p-6 flex flex-col items-center text-center hover:bg-green-700">
+                    <i class="fas fa-ambulance text-4xl mb-3"></i>
+                    <h3 class="text-2xl font-bold">Ambulance</h3>
+                    <p class="text-sm">Dial 108</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: Essential Tools -->
+        <section class="mb-16 animated-section" data-scroll>
+            <h2 class="text-3xl font-bold mb-8 section-header text-gray-900">
+                <i class="fas fa-tools text-blue-500 mr-3"></i>Essential Tools
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                <!-- Button: Emergency Alert -->
+                <button id="emergency-alert-btn" class="btn card bg-orange-500 text-white rounded-2xl p-6 flex flex-col items-center text-center hover:bg-orange-600">
+                    <i class="fas fa-bullhorn text-4xl mb-3"></i>
+                    <h3 class="text-xl font-bold">Emergency Alert</h3>
+                    <p class="text-sm">Activates a loud, visible alert.</p>
+                </button>
+
+                <!-- Button: Flashlight -->
+                <button id="flashlight-btn" class="btn card bg-gray-700 text-white rounded-2xl p-6 flex flex-col items-center text-center hover:bg-gray-800">
+                    <i class="fas fa-lightbulb text-4xl mb-3"></i>
+                    <h3 class="text-xl font-bold">Flashlight</h3>
+                    <p class="text-sm">Toggles your screen light.</p>
+                </button>
+                
+                <!-- Button: Distress Message -->
+                <button id="distress-message-btn" class="btn card bg-emerald-500 text-white rounded-2xl p-6 flex flex-col items-center text-center hover:bg-emerald-600">
+                    <i class="fas fa-paper-plane text-4xl mb-3"></i>
+                    <h3 class="text-xl font-bold">Distress Message</h3>
+                    <p class="text-sm">Generates a message to share with loved ones.</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section: What to Do & What NOT to Do -->
+        <section class="animated-section" data-scroll>
+            <h2 class="text-3xl font-bold mb-8 section-header text-gray-900">
+                <i class="fas fa-list-ul text-blue-500 mr-3"></i>Immediate Actions
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Card: What to Do -->
+                <div class="card bg-white rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-emerald-100 text-emerald-600 p-4 rounded-full">
+                            <i class="fas fa-check-circle text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">What to Do</h3>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-broadcast-tower text-emerald-400 mr-2"></i>Listen to local authorities and emergency broadcasters for instructions.</li>
+                        <li><i class="fas fa-user-friends text-emerald-400 mr-2"></i>Stay with your family and do not split up.</li>
+                        <li><i class="fas fa-home text-emerald-400 mr-2"></i>Shelter in the safest part of your home, away from windows.</li>
+                        <li><i class="fas fa-plug text-emerald-400 mr-2"></i>Shut off utilities if instructed or if you smell gas.</li>
+                        <li><i class="fas fa-battery-half text-emerald-400 mr-2"></i>Conserve your phone's battery life.</li>
+                    </ul>
+                </div>
+                
+                <!-- Card: What NOT to Do -->
+                <div class="card bg-white rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-rose-100 text-rose-600 p-4 rounded-full">
+                            <i class="fas fa-times-circle text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">What NOT to Do</h3>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-phone-alt text-rose-400 mr-2"></i>Do not use your phone for non-essential calls. Texting is better.</li>
+                        <li><i class="fas fa-car-crash text-rose-400 mr-2"></i>Do not drive unless absolutely necessary or instructed to evacuate.</li>
+                        <li><i class="fas fa-exclamation-triangle text-rose-400 mr-2"></i>Do not go outside to sightsee or inspect damage.</li>
+                        <li><i class="fas fa-running text-rose-400 mr-2"></i>Do not ignore official evacuation orders.</li>
+                        <li><i class="fas fa-water text-rose-400 mr-2"></i>Do not drink tap water until it's confirmed safe.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Popup for Messages -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h3 id="popup-title" class="text-2xl font-bold mb-4"></h3>
+            <p id="popup-message" class="text-gray-700 mb-4"></p>
+            <button id="popup-close-btn" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700">Close</button>
+            <button id="copy-btn" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 mt-4 hidden">Copy Message</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Functionality and Animations -->
+    <script>
+        // DOM Elements
+        const emergencyAlertBtn = document.getElementById('emergency-alert-btn');
+        const flashlightBtn = document.getElementById('flashlight-btn');
+        const distressMessageBtn = document.getElementById('distress-message-btn');
+        const flashlightOverlay = document.getElementById('flashlight-overlay');
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popup-title');
+        const popupMessage = document.getElementById('popup-message');
+        const popupCloseBtn = document.getElementById('popup-close-btn');
+        const copyBtn = document.getElementById('copy-btn');
+        
+        let isFlashlightOn = false;
+        let isAlertActive = false;
+
+        // Function to show a pop-up message
+        function showPopup(title, message, showCopyButton = false) {
+            popupTitle.textContent = title;
+            popupMessage.textContent = message;
+            popup.style.display = 'flex';
+            if (showCopyButton) {
+                copyBtn.style.display = 'inline-block';
+            } else {
+                copyBtn.style.display = 'none';
+            }
+        }
+
+        // Close pop-up
+        popupCloseBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        // Emergency Alert functionality
+        emergencyAlertBtn.addEventListener('click', () => {
+            if (!isAlertActive) {
+                isAlertActive = true;
+                emergencyAlertBtn.classList.add('blink-me', 'bg-red-500');
+                emergencyAlertBtn.innerHTML = '<i class="fas fa-times-circle text-4xl mb-3"></i><h3 class="text-xl font-bold">Alert Active</h3><p class="text-sm">Click to deactivate.</p>';
+
+                // Play a loud sound
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(880, audioContext.currentTime); // High-pitched A5 note
+                
+                gainNode.gain.setValueAtTime(1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 1.5);
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                oscillator.start();
+                
+                // Stop sound after a short period
+                setTimeout(() => {
+                    oscillator.stop();
+                    isAlertActive = false;
+                    emergencyAlertBtn.classList.remove('blink-me', 'bg-red-500');
+                    emergencyAlertBtn.innerHTML = '<i class="fas fa-bullhorn text-4xl mb-3"></i><h3 class="text-xl font-bold">Emergency Alert</h3><p class="text-sm">Activates a loud, visible alert.</p>';
+                }, 1500);
+            }
+        });
+
+        // Flashlight functionality
+        flashlightBtn.addEventListener('click', () => {
+            isFlashlightOn = !isFlashlightOn;
+            if (isFlashlightOn) {
+                flashlightOverlay.style.display = 'block';
+                flashlightBtn.innerHTML = '<i class="fas fa-lightbulb-on text-4xl mb-3"></i><h3 class="text-xl font-bold">Flashlight On</h3><p class="text-sm">Click to turn off.</p>';
+                flashlightBtn.classList.add('bg-blue-500');
+                flashlightBtn.classList.remove('bg-gray-700');
+            } else {
+                flashlightOverlay.style.display = 'none';
+                flashlightBtn.innerHTML = '<i class="fas fa-lightbulb text-4xl mb-3"></i><h3 class="text-xl font-bold">Flashlight Off</h3><p class="text-sm">Toggles your screen light.</p>';
+                flashlightBtn.classList.remove('bg-blue-500');
+                flashlightBtn.classList.add('bg-gray-700');
+            }
+        });
+
+        // Distress Message functionality
+        distressMessageBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    const message = `I am in a disaster and need help. My current location is Lat: ${lat}, Lon: ${lon}. You can view my location here: https://www.google.com/maps?q=${lat},${lon}`;
+                    showPopup("Distress Message", message, true);
+
+                    // Set up copy to clipboard functionality for this specific message
+                    copyBtn.onclick = () => {
+                        const tempInput = document.createElement('textarea');
+                        tempInput.value = message;
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        showPopup("Success!", "Message copied to clipboard. You can now paste it into a text message or chat.");
+                    };
+                }, () => {
+                    showPopup("Location Error", "Unable to retrieve your location. Please ensure location services are enabled.");
+                });
+            } else {
+                showPopup("Location Not Supported", "Geolocation is not supported by your browser. A message without location can still be generated.");
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('.animated-section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

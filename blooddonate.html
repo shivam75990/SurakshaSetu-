@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood: The Gift of Life</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .section-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .collapsible-content.expanded {
+            max-height: 500px; /* A large enough value to allow the content to expand */
+        }
+        /* Simple modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 24px;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <main class="container mx-auto px-4 py-12 md:py-16">
+        
+        <!-- Hero Section -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                Your Donation Can Save a Life
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Donating blood is a simple act that can have a profound impact. Learn why it matters and how you can help.
+            </p>
+        </div>
+
+        <!-- Why Donate Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-heartbeat text-sky-500 mr-3"></i>Why Your Donation is Critical
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Emergency Situations -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-ambulance text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Emergency Situations</h3>
+                    <p class="text-gray-600 text-sm">Blood is vital for trauma victims, surgical patients, and people in critical condition after a disaster.</p>
+                </div>
+                
+                <!-- Card 2: Ongoing Needs -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-users-medical text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Ongoing Patient Care</h3>
+                    <p class="text-gray-600 text-sm">Patients with chronic illnesses, cancer, or blood disorders require regular transfusions to survive.</p>
+                </div>
+
+                <!-- Card 3: Constant Demand -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-hand-holding-medical text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">A Constant Need</h3>
+                    <p class="text-gray-600 text-sm">Blood cannot be manufactured, so the only source is from generous donors. The supply must be constantly replenished.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Can Donate Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-user-check text-sky-500 mr-3"></i>Are You Eligible?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <p class="text-gray-600">Most healthy individuals can donate blood. Here are the general requirements:</p>
+                    <ul class="list-none space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span>You must be in good general health.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span>You must be at least 16 or 17 years old, depending on local regulations.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span>You must weigh at least 110 lbs (50 kg).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span>You must wait a certain period between donations (usually 56 days for whole blood).</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="bg-sky-500 text-white p-6 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-2">Not Sure?</h3>
+                        <p class="text-sm">Many people who think they can't donate are actually eligible. It's always best to check with a local donation center for specific guidelines.</p>
+                        <button onclick="showModal('eligibility')" class="mt-4 bg-white text-sky-500 font-bold py-2 px-6 rounded-full transition hover:bg-gray-100">
+                            Check My Eligibility
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Where to Donate Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-map-marker-alt text-sky-500 mr-3"></i>Where to Donate
+            </h2>
+            <div class="text-center">
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                    Blood donation centers are located in communities across the country. Find a center or blood drive near you.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <button onclick="showModal('locate')" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full transition hover:bg-sky-600 text-lg shadow-md">
+                        Find a Donation Center
+                    </button>
+                    <button onclick="showModal('learnMore')" class="bg-white text-sky-500 font-bold py-3 px-8 rounded-full transition hover:bg-gray-100 border border-sky-500 text-lg shadow-md">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Modal for Help Buttons -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="absolute top-4 right-4 text-gray-500 text-2xl font-bold cursor-pointer hover:text-gray-800" onclick="closeModal()">&times;</span>
+            <div class="p-4">
+                <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+                <p id="modalText" class="text-gray-700 mb-6"></p>
+                <button onclick="closeModal()" class="w-full bg-sky-500 text-white font-bold py-2 px-4 rounded-full transition hover:bg-sky-600">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Shows the modal with specific content
+        function showModal(type) {
+            const modal = document.getElementById('helpModal');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            
+            // Set modal content based on the button clicked
+            switch(type) {
+                case 'eligibility':
+                    title.innerText = 'Check Your Eligibility';
+                    text.innerText = 'To get detailed and personalized eligibility information, please visit the website of a major blood donation organization like the American Red Cross.';
+                    break;
+                case 'locate':
+                    title.innerText = 'Find a Donation Center';
+                    text.innerText = 'You can find a local blood donation center or drive by searching on the websites of organizations such as the Red Cross, OneBlood, or local hospitals.';
+                    break;
+                case 'learnMore':
+                    title.innerText = 'Learn More About Donating';
+                    text.innerText = 'For comprehensive information on the donation process, frequently asked questions, and what to expect, visit the official websites of blood donation organizations.';
+                    break;
+            }
+
+            modal.style.display = 'block';
+        }
+
+        // Hides the modal
+        function closeModal() {
+            const modal = document.getElementById('helpModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('helpModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

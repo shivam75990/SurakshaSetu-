@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Checklist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+        }
+
+        .checklist-item {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .checklist-item:hover {
+            transform: translateX(4px);
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <main class="container mx-auto px-4 py-8 mt-4">
+        
+        <!-- Checklist Hero Section -->
+        <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl shadow-2xl p-8 text-center md:p-16 mb-12 transform transition-all duration-500">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Your Emergency Checklist</h2>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto mb-8">
+                Prepare your emergency kit in advance. A well-stocked kit can make all the difference when a disaster strikes. Use this guide to help you get ready.
+            </p>
+        </div>
+
+        <!-- Checklist Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Category: Water & Food -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl transform hover:scale-[1.01]">
+                <div class="bg-blue-100 text-blue-600 p-4 rounded-full mb-4">
+                    <i class="fas fa-water text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Water & Food Supplies</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Stock up on essentials for at least 3 days. Aim for a gallon of water per person, per day.
+                </p>
+                <ul class="w-full text-left space-y-2">
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Water (1 gallon per person, per day)</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Non-perishable food</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Manual can opener</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Food for pets</span></li>
+                </ul>
+            </div>
+
+            <!-- Category: First Aid & Health -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl transform hover:scale-[1.01]">
+                <div class="bg-red-100 text-red-600 p-4 rounded-full mb-4">
+                    <i class="fas fa-first-aid text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">First Aid & Health</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Assemble a comprehensive first aid kit with supplies to handle common injuries and medical needs.
+                </p>
+                <ul class="w-full text-left space-y-2">
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>First aid manual</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Bandages, gauze, and tape</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Prescription medication (7-day supply)</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Personal hygiene items</span></li>
+                </ul>
+            </div>
+
+            <!-- Category: Tools & Supplies -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl transform hover:scale-[1.01]">
+                <div class="bg-gray-200 text-gray-600 p-4 rounded-full mb-4">
+                    <i class="fas fa-tools text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Tools & Emergency Supplies</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Essential tools for light, communication, and basic repairs that can be critical in an emergency situation.
+                </p>
+                <ul class="w-full text-left space-y-2">
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Flashlight and extra batteries</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Battery-powered or hand-crank radio</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Whistle to signal for help</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Wrench or pliers</span></li>
+                </ul>
+            </div>
+
+            <!-- Category: Documents & Money -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl transform hover:scale-[1.01]">
+                <div class="bg-teal-100 text-teal-600 p-4 rounded-full mb-4">
+                    <i class="fas fa-file-invoice-dollar text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Documents & Money</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Keep copies of important documents and cash in a waterproof bag for easy access and security.
+                </p>
+                <ul class="w-full text-left space-y-2">
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Cash in small bills</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Copies of IDs, passports, and insurance</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>List of emergency contacts</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Local map</span></li>
+                </ul>
+            </div>
+
+            <!-- Category: Sanitation & Hygiene -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl transform hover:scale-[1.01]">
+                <div class="bg-purple-100 text-purple-600 p-4 rounded-full mb-4">
+                    <i class="fas fa-hand-sparkles text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Sanitation & Hygiene</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Maintaining hygiene is crucial to prevent the spread of illness during and after a disaster event.
+                </p>
+                <ul class="w-full text-left space-y-2">
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Wet wipes, hand sanitizer</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Garbage bags and plastic ties</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Dust mask</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Feminine hygiene products</span></li>
+                </ul>
+            </div>
+
+            <!-- Category: Clothing & Bedding -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl transform hover:scale-[1.01]">
+                <div class="bg-yellow-100 text-yellow-600 p-4 rounded-full mb-4">
+                    <i class="fas fa-tshirt text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Clothing & Bedding</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Pack a change of clothes and blankets to stay warm and comfortable for at least a few days.
+                </p>
+                <ul class="w-full text-left space-y-2">
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Complete change of clothes for each person</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Sleeping bag or warm blanket</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Rain gear</span></li>
+                    <li class="checklist-item flex items-center p-3 rounded-lg text-gray-700"><i class="fas fa-square-check text-green-500 mr-3 hidden check-icon"></i><span>Sturdy shoes</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        // Checklist item functionality
+        document.querySelectorAll('.checklist-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const icon = item.querySelector('.check-icon');
+                const isChecked = icon.classList.toggle('hidden');
+                
+                if (isChecked) {
+                    item.classList.remove('text-gray-700');
+                    item.classList.add('text-gray-400');
+                    item.style.textDecoration = 'line-through';
+                } else {
+                    item.classList.remove('text-gray-400');
+                    item.classList.add('text-gray-700');
+                    item.style.textDecoration = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

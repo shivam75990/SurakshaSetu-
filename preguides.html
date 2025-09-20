@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Preparedness Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* blue-50 */
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .section-header {
+            border-left: 5px solid #3b82f6; /* blue-500 */
+            padding-left: 1rem;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <main class="container mx-auto px-4 py-12 md:py-16">
+        
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                The Complete Disaster Preparedness Guide
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Preparation, swift action, and a plan for recovery are your most powerful tools in any emergency. This guide provides a comprehensive framework to help you and your family navigate a crisis.
+            </p>
+        </div>
+
+        <!-- Section 1: Before a Disaster (Anticipate) -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-check-circle text-blue-500 mr-3"></i>Before: Anticipate & Prepare
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Card 1: Emergency Kit -->
+                <div class="card bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-blue-100 text-blue-600 p-4 rounded-full">
+                            <i class="fas fa-box-open text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Build an Emergency Kit</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Prepare a kit with essential supplies that can sustain you and your family for at least 72 hours.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-tint text-blue-400 mr-2"></i>Water (one gallon per person per day)</li>
+                        <li><i class="fas fa-utensils text-blue-400 mr-2"></i>Non-perishable food</li>
+                        <li><i class="fas fa-first-aid text-blue-400 mr-2"></i>First-aid kit and medications</li>
+                        <li><i class="fas fa-battery-half text-blue-400 mr-2"></i>Flashlight and extra batteries</li>
+                        <li><i class="fas fa-bolt text-blue-400 mr-2"></i>Battery-powered radio</li>
+                        <li><i class="fas fa-money-bill-wave text-blue-400 mr-2"></i>Important documents and cash</li>
+                    </ul>
+                </div>
+                
+                <!-- Card 2: Communication Plan -->
+                <div class="card bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-blue-100 text-blue-600 p-4 rounded-full">
+                            <i class="fas fa-phone-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Create a Communication Plan</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Decide on a meeting place and a family contact outside of your local area. Text messages often work when phone calls don't.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-users text-blue-400 mr-2"></i>Designate an out-of-state contact</li>
+                        <li><i class="fas fa-map-marked-alt text-blue-400 mr-2"></i>Establish a primary and secondary meeting place</li>
+                        <li><i class="fas fa-clipboard-list text-blue-400 mr-2"></i>Make a list of emergency numbers</li>
+                        <li><i class="fas fa-user-circle text-blue-400 mr-2"></i>Include important personal information</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: During a Disaster (Respond) -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-shield-alt text-blue-500 mr-3"></i>During: Respond & Stay Safe
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Card 1: Follow Instructions -->
+                <div class="card bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-blue-100 text-blue-600 p-4 rounded-full">
+                            <i class="fas fa-bullhorn text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Follow Official Instructions</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Listen to local authorities and emergency broadcasters. Evacuate immediately if instructed to do so.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-broadcast-tower text-blue-400 mr-2"></i>Tune into a battery-powered radio</li>
+                        <li><i class="fas fa-map-signs text-blue-400 mr-2"></i>Follow designated evacuation routes</li>
+                        <li><i class="fas fa-mobile-alt text-blue-400 mr-2"></i>Use text messages for communication</li>
+                    </ul>
+                </div>
+                
+                <!-- Card 2: Shelter in Place -->
+                <div class="card bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-blue-100 text-blue-600 p-4 rounded-full">
+                            <i class="fas fa-home text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Shelter in Place Safely</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        If advised to stay indoors, find the safest room in your home, away from windows and doors.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-door-closed text-blue-400 mr-2"></i>Close all doors and windows</li>
+                        <li><i class="fas fa-plug text-blue-400 mr-2"></i>Shut off utilities if necessary</li>
+                        <li><i class="fas fa-hands-helping text-blue-400 mr-2"></i>Stay together as a family</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: After a Disaster (Recover) -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-hands-helping text-blue-500 mr-3"></i>After: Recover & Rebuild
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Card 1: Check on Yourself and Others -->
+                <div class="card bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-blue-100 text-blue-600 p-4 rounded-full">
+                            <i class="fas fa-user-friends text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Check on Yourself and Others</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Assess injuries and provide first aid. Check on neighbors and family members who may need assistance.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-stethoscope text-blue-400 mr-2"></i>Administer first aid for minor injuries</li>
+                        <li><i class="fas fa-phone-square-alt text-blue-400 mr-2"></i>Contact out-of-state family to let them know you are safe</li>
+                        <li><i class="fas fa-exclamation-triangle text-blue-400 mr-2"></i>Look for and report any immediate hazards</li>
+                    </ul>
+                </div>
+                
+                <!-- Card 2: Begin Recovery -->
+                <div class="card bg-white rounded-2xl shadow-xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex-shrink-0 bg-blue-100 text-blue-600 p-4 rounded-full">
+                            <i class="fas fa-building text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Assess Damage and Begin Recovery</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Safely inspect your property for damage. Document all damage for insurance purposes.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium">
+                        <li><i class="fas fa-camera text-blue-400 mr-2"></i>Take photos or videos of all damage</li>
+                        <li><i class="fas fa-file-invoice-dollar text-blue-400 mr-2"></i>Contact your insurance company</li>
+                        <li><i class="fas fa-tools text-blue-400 mr-2"></i>Begin cleanup and temporary repairs only when it is safe to do so</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

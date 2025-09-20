@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Alerts</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+        }
+        .alert-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .alert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Make the main content area scrollable */
+        .scroll-container {
+            max-height: calc(100vh - 200px); /* Adjust height to fit the screen */
+            overflow-y: auto;
+        }
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #d1d5db; /* gray-300 */
+            border-radius: 4px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background-color: #e5e7eb; /* gray-200 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <main class="container mx-auto px-4 py-8">
+        
+        <!-- Alerts Hero Section -->
+        <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl shadow-2xl p-8 text-center md:p-16 mb-12">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Current Emergency Alerts</h2>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto mb-8">
+                Stay informed with the latest advisories. This page updates in real-time.
+            </p>
+        </div>
+
+        <!-- Alerts Container (where alerts will be displayed) -->
+        <div id="alerts-container" class="space-y-6 scroll-container">
+            <!-- Initial alerts go here -->
+        </div>
+
+    </main>
+
+    <script>
+        const alertsContainer = document.getElementById('alerts-container');
+
+        // A queue of hardcoded alerts to be added over time
+        const alertsQueue = [
+            {
+                title: "Tornado Watch Issued",
+                description: "A tornado watch has been issued for the area. Be prepared to take shelter.",
+                severity: "severe",
+                timestamp: new Date()
+            },
+            {
+                title: "Flash Flood Warning Issued",
+                description: "A flash flood warning is in effect for the metropolitan area. Move to higher ground immediately.",
+                severity: "severe",
+                timestamp: new Date(Date.now() - 30000)
+            },
+            {
+                title: "High Wind Advisory in Effect",
+                description: "Strong winds up to 50 mph are expected. Secure any outdoor items and be cautious when driving.",
+                severity: "moderate",
+                timestamp: new Date(Date.now() - 150000)
+            },
+            {
+                title: "Local Power Outage",
+                description: "Power is out in the downtown area. Crews are working to restore service.",
+                severity: "info",
+                timestamp: new Date(Date.now() - 250000)
+            },
+            {
+                title: "Traffic Accident on Route 80",
+                description: "A multi-vehicle accident has closed all westbound lanes of Route 80. Expect significant delays.",
+                severity: "info",
+                timestamp: new Date(Date.now() - 300000)
+            },
+            {
+                title: "Severe Thunderstorm Warning",
+                description: "A severe thunderstorm is approaching. Heavy rain and lightning are expected. Seek shelter indoors.",
+                severity: "severe",
+                timestamp: new Date(Date.now() - 400000)
+            },
+            {
+                title: "Air Quality Alert",
+                description: "The air quality is unhealthy for sensitive groups due to elevated ozone levels. Limit outdoor activity.",
+                severity: "moderate",
+                timestamp: new Date(Date.now() - 500000)
+            }
+        ];
+
+        /**
+         * Creates and returns the HTML for an individual alert card.
+         * @param {Object} alert - The alert object with title, description, severity, and timestamp.
+         * @param {boolean} isNew - Indicates if the alert is the newest one, for animation.
+         * @returns {string} The HTML string for the alert card.
+         */
+        const createAlertCard = (alert, isNew = false) => {
+            let borderColorClass, iconClass, iconBgClass, iconColorClass;
+
+            switch (alert.severity) {
+                case 'severe':
+                    borderColorClass = 'border-red-500';
+                    iconClass = 'fas fa-exclamation-triangle';
+                    iconBgClass = 'bg-red-100';
+                    iconColorClass = 'text-red-600';
+                    break;
+                case 'moderate':
+                    borderColorClass = 'border-yellow-500';
+                    iconClass = 'fas fa-exclamation-circle';
+                    iconBgClass = 'bg-yellow-100';
+                    iconColorClass = 'text-yellow-600';
+                    break;
+                case 'info':
+                default:
+                    borderColorClass = 'border-blue-500';
+                    iconClass = 'fas fa-info-circle';
+                    iconBgClass = 'bg-blue-100';
+                    iconColorClass = 'text-blue-600';
+                    break;
+            }
+
+            const timeString = new Date(alert.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            return `
+                <div class="alert-card bg-white p-6 rounded-2xl shadow-lg border-l-4 ${borderColorClass} ${isNew ? 'fade-in' : ''}">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 ${iconBgClass} ${iconColorClass} p-3 rounded-full">
+                            <i class="${iconClass} text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${alert.title}</h3>
+                            <p class="text-gray-600 mt-1">${alert.description}</p>
+                            <p class="text-sm text-gray-400 mt-2">Issued: ${timeString}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        };
+
+        let nextAlertIndex = 0;
+
+        /**
+         * Adds a new alert from the queue to the top of the list.
+         */
+        const addNewAlert = () => {
+            if (nextAlertIndex >= alertsQueue.length) {
+                console.log("All alerts displayed.");
+                return;
+            }
+
+            const newAlert = alertsQueue[nextAlertIndex];
+            const newAlertHtml = createAlertCard(newAlert, true);
+            alertsContainer.insertAdjacentHTML('afterbegin', newAlertHtml);
+            nextAlertIndex++;
+
+            // Wait a few seconds before adding the next one
+            setTimeout(addNewAlert, Math.floor(Math.random() * 5000) + 5000); // 5 to 10 seconds
+        };
+
+        // Add the initial alerts to the page on load
+        window.onload = () => {
+            alertsQueue.reverse().forEach((alert) => {
+                const alertHtml = createAlertCard(alert);
+                alertsContainer.insertAdjacentHTML('beforeend', alertHtml);
+            });
+            // Start the "real-time" updates after a short delay
+            setTimeout(addNewAlert, 3000);
+        };
+    </script>
+</body>
+</html>

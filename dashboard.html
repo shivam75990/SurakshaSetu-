@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SurakshaSetu | Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <style>
+      :root {
+        --primary-bg: #1e3a8a;
+        --secondary-bg: #3b82f6;
+        --text-color: #ffffff;
+        --card-light-bg: #f3f4f6;
+        --card-light-text: #1f2937;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--primary-bg);
+        color: var(--text-color);
+      }
+      .dashboard-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      @media (min-width: 768px) {
+        .dashboard-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .dashboard-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .span-2 {
+          grid-column: span 2;
+        }
+      }
+      .card {
+        background-color: var(--secondary-bg);
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card-light {
+        background-color: var(--card-light-bg);
+        color: var(--card-light-text);
+      }
+      .live-tag {
+        background-color: #ef4444;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+      .map-container {
+        border-radius: 0.75rem;
+        height: 500px;
+        width: 100%;
+        overflow: hidden; /* This ensures the map stays within the container */
+      }
+      .map-iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body class="bg-blue-900 text-white min-h-screen p-4 sm:p-6">
+    <!-- Header -->
+    <header class="bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 mb-6">
+      <div class="container mx-auto flex items-center justify-between">
+        <h1 class="text-2xl sm:text-3xl font-bold text-white">
+          SurakshaSetu Dashboard
+        </h1>
+        <div class="flex space-x-4">
+          <a
+            href="index.html"
+            class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-full px-4 py-2 transition-colors"
+            >Home</a
+          >
+          <a
+            href="dashboard.html"
+            class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-full px-4 py-2 transition-colors"
+            >Dashboard</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto">
+      <div class="mb-8 text-center">
+        <h2 class="text-xl sm:text-2xl font-semibold mb-2">
+          Operational Overview
+        </h2>
+        <p class="text-gray-300">
+          Monitor and manage critical incidents and resources in real time.
+        </p>
+      </div>
+
+      <!-- Dashboard Grid -->
+      <div class="dashboard-container">
+        <!-- Card 1: Active Incidents -->
+        <div id="incidents-card" class="card p-6 card-light">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg sm:text-xl font-bold">Active Incidents</h3>
+            <span class="live-tag">Live</span>
+          </div>
+          <p
+            id="incidents-count"
+            class="text-4xl font-extrabold text-red-600 mb-2"
+          >
+            0
+          </p>
+          <p class="text-gray-500">
+            Critical incidents requiring immediate attention.
+          </p>
+          <a
+            href="#"
+            class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium"
+            >View Map &rarr;</a
+          >
+        </div>
+
+        <!-- Card 2: Volunteer Availability -->
+        <div id="volunteers-card" class="card p-6 card-light">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg sm:text-xl font-bold">Volunteers Available</h3>
+            <span class="text-green-500 text-2xl">&#x2714;</span>
+          </div>
+          <p
+            id="volunteers-count"
+            class="text-4xl font-extrabold text-green-600 mb-2"
+          >
+            0
+          </p>
+          <p class="text-gray-500">Total volunteers ready for deployment.</p>
+          <a
+            href="teams.html"
+            class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium"
+            >Manage Teams &rarr;</a
+          >
+        </div>
+
+        <!-- Card 3: Resources -->
+        <div id="resources-card" class="card p-6 card-light">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg sm:text-xl font-bold">Resource Capacity</h3>
+            <span class="text-yellow-500 text-2xl">&#x26A0;</span>
+          </div>
+          <p
+            id="resources-count"
+            class="text-4xl font-extrabold text-yellow-600 mb-2"
+          >
+            0%
+          </p>
+          <p class="text-gray-500">
+            Current available supply and equipment capacity.
+          </p>
+          <a
+            href="resource.html"
+            class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium"
+            >Check Inventory &rarr;</a
+          >
+        </div>
+
+        <!-- Card 4: Real-Time Disaster Map -->
+        <div class="card p-6 card-light span-2">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg sm:text-xl font-bold">Real-Time Disaster Map</h3>
+          </div>
+          <div class="map-container">
+            <!-- Add your map link here. For example, a Google Maps embed URL. -->
+            <iframe
+              class="map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659459.3081712415!2d80.85930415!3d27.138192949999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39994e9f7b4a09d3%3A0xf6a5476d3617249d!2sUttar%20Pradesh!5e1!3m2!1sen!2sin!4v1758301058693!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Card 5: Recent Communications -->
+        <div class="card p-6 card-light">
+          <h3 class="text-lg sm:text-xl font-bold mb-4">
+            Recent Communications
+          </h3>
+          <ul id="communication-log" class="space-y-3 text-sm text-gray-600">
+            <!-- Log entries will be added by JavaScript -->
+            <li class="p-3 bg-gray-200 rounded-lg">
+              <span class="font-semibold text-gray-800">10:35 AM:</span> New
+              severe weather alert issued for coastal regions.
+            </li>
+            <li class="p-3 bg-gray-200 rounded-lg">
+              <span class="font-semibold text-gray-800">10:30 AM:</span> Message
+              sent to all field teams regarding new alert.
+            </li>
+            <li class="p-3 bg-gray-200 rounded-lg">
+              <span class="font-semibold text-gray-800">10:25 AM:</span> New
+              volunteer group registered from City Center.
+            </li>
+          </ul>
+          <a
+            href="log.html"
+            class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium"
+            >View Full Log &rarr;</a
+          >
+        </div>
+      </div>
+    </main>
+    <script>
+      // Placeholder for API URL - replace with your actual API endpoint
+      const API_URL = "https://api.example.com/disaster-data";
+
+      // An asynchronous function to fetch data from the API
+      async function fetchAndRenderData() {
+        try {
+          // Since the API URL is a placeholder, we will simulate data.
+          // When you have a real API, you can uncomment the fetch call below
+          // and use the real data.
+
+          // const response = await fetch(API_URL);
+          // if (!response.ok) {
+          //     throw new Error(`HTTP error! status: ${response.status}`);
+          // }
+          // const data = await response.json();
+
+          // Mock data to simulate a real-time API response
+          const data = {
+            activeIncidents: Math.floor(Math.random() * 5) + 1,
+            volunteersAvailable: Math.floor(Math.random() * 100) + 100,
+            resourceCapacity: Math.floor(Math.random() * 20) + 75,
+          };
+
+          // Update the dashboard with the fetched data
+          document.getElementById("incidents-count").innerText =
+            data.activeIncidents;
+          document.getElementById("volunteers-count").innerText =
+            data.volunteersAvailable;
+          document.getElementById("resources-count").innerText =
+            data.resourceCapacity + "%";
+        } catch (error) {
+          console.error("Failed to fetch dashboard data:", error);
+        }
+      }
+
+      // Initialize the dashboard on page load
+      window.onload = function () {
+        // Fetch data initially
+        fetchAndRenderData();
+        // Then, set an interval to refresh the data every 10 seconds
+        setInterval(fetchAndRenderData, 10000);
+      };
+
+      // These functions are no longer tied to buttons but remain here
+      // in case you want to use them for other controls.
+      function zoomIn() {
+        console.log(
+          "Zoom in button clicked. Please implement logic to control your embedded map here."
+        );
+      }
+
+      function zoomOut() {
+        console.log(
+          "Zoom out button clicked. Please implement logic to control your embedded map here."
+        );
+      }
+    </script>
+  </body>
+</html>

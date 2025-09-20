@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Incidents</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-bg: #1e3a8a;
+            --secondary-bg: #3b82f6;
+            --text-color: #ffffff;
+            --card-light-bg: #f3f4f6;
+            --card-light-text: #1f2937;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+        }
+        .container-bg {
+            background-color: var(--card-light-bg);
+            border-radius: 0.75rem;
+            color: var(--card-light-text);
+        }
+        .table-header {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body class="bg-blue-900 text-white min-h-screen p-4 sm:p-6">
+
+    <!-- Header -->
+    <header class="bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 mb-6">
+        <div class="container mx-auto flex items-center justify-between">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white">Active Incidents</h1>
+            <div class="flex space-x-4">
+                <a href="dashboard.html" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-full px-4 py-2 transition-colors">Back to Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+        <div class="mb-8 text-center">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-2">Detailed Incident Report</h2>
+            <p class="text-gray-300">View and manage all active disaster incidents.</p>
+        </div>
+
+        <!-- Incident Table -->
+        <div class="container-bg p-6 shadow-md overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-300">
+                <thead class="table-header">
+                    <tr>
+                        <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold">Incident ID</th>
+                        <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold">Type</th>
+                        <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold">Location</th>
+                        <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold">Severity</th>
+                        <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold">Status</th>
+                        <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white">
+                    <tr class="hover:bg-gray-100">
+                        <td class="whitespace-nowrap py-4 px-3 text-sm font-medium text-gray-900">INC-001</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-gray-500">Earthquake</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-gray-500">Delhi, India</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-red-600 font-semibold">Critical</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-yellow-600 font-semibold">Ongoing</td>
+                        <td class="relative whitespace-nowrap py-4 px-3 text-sm font-medium">
+                            <a href="earthquake.html" class="text-blue-600 hover:text-blue-900">View Details</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-100">
+                        <td class="whitespace-nowrap py-4 px-3 text-sm font-medium text-gray-900">INC-002</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-gray-500">Flood</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-gray-500">Mumbai, India</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-yellow-600 font-semibold">High</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-yellow-600 font-semibold">Ongoing</td>
+                        <td class="relative whitespace-nowrap py-4 px-3 text-sm font-medium">
+                            <a href="flood.html" class="text-blue-600 hover:text-blue-900">View Details</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-100">
+                        <td class="whitespace-nowrap py-4 px-3 text-sm font-medium text-gray-900">INC-003</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-gray-500">Wildfire</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-gray-500">Bengaluru, India</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-red-600 font-semibold">High</td>
+                        <td class="whitespace-nowrap py-4 px-3 text-sm text-green-600 font-semibold">Contained</td>
+                        <td class="relative whitespace-nowrap py-4 px-3 text-sm font-medium">
+                            <a href="wildfire.html" class="text-blue-600 hover:text-blue-900">View Details</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>

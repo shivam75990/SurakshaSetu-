@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Supplies: Help Those in Need</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .section-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Simple modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 24px;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <main class="container mx-auto px-4 py-12 md:py-16">
+        
+        <!-- Hero Section -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                Donate Supplies: Help Those in Need
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Your donated goods can provide essential aid to communities and individuals facing difficult times.
+            </p>
+        </div>
+
+        <!-- Why Donate Supplies Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-box-open text-sky-500 mr-3"></i>The Importance of Your Contribution
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Immediate Relief -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-truck-ramp-box text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Provide Immediate Relief</h3>
+                    <p class="text-gray-600 text-sm">Donated items can provide immediate comfort and assistance to those displaced by disasters or experiencing hardship.</p>
+                </div>
+                
+                <!-- Card 2: Essential Needs -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-shopping-basket text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Address Essential Needs</h3>
+                    <p class="text-gray-600 text-sm">Everyday items like food, water, and hygiene products are often the most crucial needs in a crisis.</p>
+                </div>
+
+                <!-- Card 3: Reduce Waste -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-recycle text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Support Sustainability</h3>
+                    <p class="text-gray-600 text-sm">Donating usable goods instead of throwing them away helps reduce landfill waste and promotes a circular economy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What to Donate Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-list-check text-sky-500 mr-3"></i>What to Donate
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <p class="text-gray-600">The most helpful donations are often simple, in good condition, and non-perishable. Always check with a local center first for their specific needs.</p>
+                    <ul class="list-none space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Non-perishable Food:</b> Canned goods, dried pasta, rice, and sealed snacks.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Hygiene Products:</b> Soap, toothbrushes, shampoo, diapers, and menstrual products.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Clothing:</b> Clean, gently used clothing, especially coats, blankets, and socks.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Water:</b> Sealed bottled water is often needed in crisis situations.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="bg-sky-500 text-white p-6 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-2">Unsure What to Give?</h3>
+                        <p class="text-sm">Donating money can often be more efficient, as organizations can purchase exactly what is needed and transport it easily. However, goods are always welcome!</p>
+                        <button onclick="showModal('needs')" class="mt-4 bg-white text-sky-500 font-bold py-2 px-6 rounded-full transition hover:bg-gray-100">
+                            Find What's Needed
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Where to Donate Section -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-map-marker-alt text-sky-500 mr-3"></i>Where to Donate Supplies
+            </h2>
+            <div class="text-center">
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                    Many local organizations accept donated goods. Find a location near you to make your contribution.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <button onclick="showModal('locate')" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full transition hover:bg-sky-600 text-lg shadow-md">
+                        Find a Donation Center
+                    </button>
+                    <button onclick="showModal('learnMore')" class="bg-white text-sky-500 font-bold py-3 px-8 rounded-full transition hover:bg-gray-100 border border-sky-500 text-lg shadow-md">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Modal for Help Buttons -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="absolute top-4 right-4 text-gray-500 text-2xl font-bold cursor-pointer hover:text-gray-800" onclick="closeModal()">&times;</span>
+            <div class="p-4">
+                <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+                <p id="modalText" class="text-gray-700 mb-6"></p>
+                <button onclick="closeModal()" class="w-full bg-sky-500 text-white font-bold py-2 px-4 rounded-full transition hover:bg-sky-600">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Shows the modal with specific content
+        function showModal(type) {
+            const modal = document.getElementById('helpModal');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            
+            // Set modal content based on the button clicked
+            switch(type) {
+                case 'needs':
+                    title.innerText = 'Find Specific Needs';
+                    text.innerText = 'Before donating, please check with local shelters, food banks, or disaster relief organizations for a list of their most-needed items. This ensures your donation is as helpful as possible.';
+                    break;
+                case 'locate':
+                    title.innerText = 'Find a Donation Center';
+                    text.innerText = 'To find a local donation center, search online for "food bank near me," "disaster relief donations," or "local shelters." Many organizations also hold donation drives.';
+                    break;
+                case 'learnMore':
+                    title.innerText = 'Learn More About Donating';
+                    text.innerText = 'For more comprehensive information on donating goods, visit the websites of major relief organizations or community-based non-profits.';
+                    break;
+            }
+
+            modal.style.display = 'block';
+        }
+
+        // Hides the modal
+        function closeModal() {
+            const modal = document.getElementById('helpModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('helpModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

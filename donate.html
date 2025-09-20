@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Donations: A Direct Way to Help</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .section-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Simple modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 24px;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <main class="container mx-auto px-4 py-12 md:py-16">
+        
+        <!-- Hero Section -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                Cash Donations: A Direct Way to Help
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Direct financial contributions provide organizations with the flexibility to respond to the most pressing needs.
+            </p>
+        </div>
+
+        <!-- Why Donate Cash Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-dollar-sign text-sky-500 mr-3"></i>Why Your Money Matters
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Flexibility -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-hand-holding-dollar text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Maximum Flexibility</h3>
+                    <p class="text-gray-600 text-sm">Cash donations allow organizations to purchase exactly what is needed, when it is needed, without logistical delays.</p>
+                </div>
+                
+                <!-- Card 2: Efficiency -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-gauge-high text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">High Efficiency</h3>
+                    <p class="text-gray-600 text-sm">Financial donations eliminate the cost and labor associated with sorting, storing, and distributing physical goods.</p>
+                </div>
+
+                <!-- Card 3: Support Local -->
+                <div class="card bg-white rounded-2xl p-6 text-center">
+                    <i class="fas fa-store text-sky-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Support the Local Economy</h3>
+                    <p class="text-gray-600 text-sm">Money donated to a local charity can be used to buy supplies from local businesses, further supporting the community.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Donate Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-clipboard-check text-sky-500 mr-3"></i>Best Practices for Giving
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <p class="text-gray-600">Making a cash donation is a powerful act of kindness. Follow these tips to ensure your gift has the greatest impact:</p>
+                    <ul class="list-none space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Research Charities:</b> Choose a reputable and transparent organization that aligns with your values.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Check for Scams:</b> Be wary of unsolicited requests and always donate directly through a charity's official website.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Designate Your Funds:</b> See if you can specify how your donation should be used (e.g., for disaster relief, health services, etc.).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-sky-500 mt-1 mr-3 text-lg"></i>
+                            <span><b>Consider Recurring Gifts:</b> A small, monthly donation can provide a charity with a stable and predictable source of funding.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="bg-sky-500 text-white p-6 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-2">Ready to Donate?</h3>
+                        <p class="text-sm">Donating online is often the safest and easiest way to give. You can also make contributions by mail or phone.</p>
+                        <button onclick="showModal('donateNow')" class="mt-4 bg-white text-sky-500 font-bold py-2 px-6 rounded-full transition hover:bg-gray-100">
+                            Donate Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finding Reputable Charities Section -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 section-header">
+                <i class="fas fa-magnifying-glass text-sky-500 mr-3"></i>Find Reputable Charities
+            </h2>
+            <div class="text-center">
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                    Use these resources to find and verify charities before you donate.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <button onclick="showModal('charityCheck')" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full transition hover:bg-sky-600 text-lg shadow-md">
+                        Check a Charity
+                    </button>
+                    <button onclick="showModal('findCharity')" class="bg-white text-sky-500 font-bold py-3 px-8 rounded-full transition hover:bg-gray-100 border border-sky-500 text-lg shadow-md">
+                        Find a New Charity
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Modal -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="absolute top-4 right-4 text-gray-500 text-2xl font-bold cursor-pointer hover:text-gray-800" onclick="closeModal()">&times;</span>
+            <div class="p-4">
+                <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+                <p id="modalText" class="text-gray-700 mb-6"></p>
+                <button onclick="closeModal()" class="w-full bg-sky-500 text-white font-bold py-2 px-4 rounded-full transition hover:bg-sky-600">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Shows the modal with specific content
+        function showModal(type) {
+            const modal = document.getElementById('donationModal');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            
+            // Set modal content based on the button clicked
+            switch(type) {
+                case 'donateNow':
+                    title.innerText = 'How to Donate';
+                    text.innerText = 'Visit the official website of the charity you wish to support. Look for a "Donate" button, which will guide you through the process securely.';
+                    break;
+                case 'charityCheck':
+                    title.innerText = 'Verify a Charity';
+                    text.innerText = 'Use resources like Charity Navigator, GuideStar, or the Better Business Bureau (BBB) Wise Giving Alliance to check a charity\'s financial health and transparency.';
+                    break;
+                case 'findCharity':
+                    title.innerText = 'Find a Charity';
+                    text.innerText = 'You can browse for charities by cause, location, or mission using online directories like Charity Navigator, GuideStar, and Idealist.';
+                    break;
+            }
+
+            modal.style.display = 'block';
+        }
+
+        // Hides the modal
+        function closeModal() {
+            const modal = document.getElementById('donationModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('donationModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

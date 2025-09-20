@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Log</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-bg: #1e3a8a;
+            --secondary-bg: #3b82f6;
+            --text-color: #ffffff;
+            --card-light-bg: #f3f4f6;
+            --card-light-text: #1f2937;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+        }
+        .container-bg {
+            background-color: var(--card-light-bg);
+            border-radius: 0.75rem;
+            color: var(--card-light-text);
+        }
+    </style>
+</head>
+<body class="bg-blue-900 text-white min-h-screen p-4 sm:p-6">
+
+    <!-- Header -->
+    <header class="bg-gray-800 rounded-xl shadow-sm p-4 sm:p-6 mb-6">
+        <div class="container mx-auto flex items-center justify-between">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white">Communication Log</h1>
+            <div class="flex space-x-4">
+                <a href="dashboard.html" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-full px-4 py-2 transition-colors">Back to Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+        <div class="mb-8 text-center">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-2">Full Communication History</h2>
+            <p class="text-gray-300">A detailed log of all communication and alerts.</p>
+        </div>
+
+        <!-- Log Container -->
+        <div class="container-bg p-6 shadow-md">
+            <ul class="space-y-4">
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 10:30 AM</p>
+                    <p class="font-semibold text-gray-900">ALERT: High-level flood warning issued for Delhi.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 09:15 AM</p>
+                    <p class="font-semibold text-gray-900">UPDATE: Medical team 2 has arrived at the incident site.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 08:00 AM</p>
+                    <p class="font-semibold text-gray-900">NOTIFICATION: Rescue vehicles are being dispatched to Mumbai.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 07:30 AM</p>
+                    <p class="font-semibold text-gray-900">REPORT: Wildfire detected in the Bengaluru region.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 07:00 AM</p>
+                    <p class="font-semibold text-gray-900">INCIDENT: New incident reported, a landslide in Himachal Pradesh.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 06:45 AM</p>
+                    <p class="font-semibold text-gray-900">ALERT: Moderate rain forecast for Uttar Pradesh.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 06:30 AM</p>
+                    <p class="font-semibold text-gray-900">UPDATE: Power outage reported in southern Delhi. Power team dispatched.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 06:00 AM</p>
+                    <p class="font-semibold text-gray-900">NOTIFICATION: Volunteers needed for flood relief in Delhi.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 05:45 AM</p>
+                    <p class="font-semibold text-gray-900">ALERT: Evacuation orders issued for residents near the Yamuna river.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 05:30 AM</p>
+                    <p class="font-semibold text-gray-900">REPORT: Emergency shelters are at 50% capacity.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 05:00 AM</p>
+                    <p class="font-semibold text-gray-900">UPDATE: Medical supplies have been restocked at the main depot.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 04:30 AM</p>
+                    <p class="font-semibold text-gray-900">INCIDENT: Major traffic congestion reported on NH44 due to flash flooding.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 04:00 AM</p>
+                    <p class="font-semibold text-gray-900">NOTIFICATION: Heavy rain expected in the next 6 hours.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 03:30 AM</p>
+                    <p class="font-semibold text-gray-900">REPORT: First rescue teams have successfully reached the landslide location.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 03:00 AM</p>
+                    <p class="font-semibold text-gray-900">UPDATE: Helipad in Mumbai is now operational for air support.</p>
+                </li>
+                <li class="p-4 bg-white rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-500">2025-09-19 02:45 AM</p>
+                    <p class="font-semibold text-gray-900">NOTIFICATION: All local police departments are on high alert.</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-en="SurakshaSetu" data-lang-hi="सुरक्षासेतु">SurakshaSetu</title>
+    
+    
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/09/20/04/20250920043234-RAKGG8K0.js" defer></script>
+    
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+        }
+
+        /* The footer entry animation */
+        @keyframes slideUpFadeIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-footer-entry {
+            animation: slideUpFadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header and Navbar -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between">
+            <!-- Logo and Site Title -->
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-gray-800">
+                <i class="fas fa-shield-alt text-blue-600"></i>
+                <span data-lang-en="Suraksha Setu" data-lang-hi="सुरक्षा सेतु">Suraksha Setu</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <div id="nav-links" class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-4 sm:mt-0">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200" data-lang-en="Home" data-lang-hi="घर">Home</a>
+                <a href="dashboard.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200" data-lang-en="Dashboard" data-lang-hi="डैशबोर्ड">Dashboard</a>
+                <a href="login.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200" data-lang-en="Login" data-lang-hi="लॉग इन">Login</a>
+                <a href="signup.html" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition-colors duration-200 shadow-md hover:shadow-lg" data-lang-en="Sign Up" data-lang-hi="साइन अप">Sign Up</a>
+
+                <!-- Language Selector -->
+                <select id="language-select" class="ml-4 p-2 rounded-lg border border-gray-300 bg-gray-50 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-4">
+        
+        <!-- "Be Prepared for Any Emergency" section, now at the top -->
+        <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl shadow-2xl p-8 text-center md:p-16 mb-12 transform transition-all duration-500 hover:scale-[1.01]">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4" data-lang-en="Be Prepared for Any Emergency" data-lang-hi="किसी भी आपात स्थिति के लिए तैयार रहें">Be Prepared for Any Emergency</h2>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto mb-8" data-lang-en="Access critical disaster management resources, emergency alerts, and preparedness guides to keep your family and community safe." data-lang-hi="महत्वपूर्ण आपदा प्रबंधन संसाधनों, आपातकालीन अलर्ट और तैयारियों के दिशानिर्देशों तक पहुंचें ताकि आपके परिवार और समुदाय को सुरक्षित रखा जा सके।">
+                Access critical disaster management resources, emergency alerts, and preparedness guides to keep your family and community safe.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="checklist.html" class="px-8 py-4 bg-teal-400 text-gray-900 rounded-full font-semibold transition-all duration-300 hover:bg-teal-500 hover:shadow-xl transform hover:scale-105 active:scale-95" data-lang-en="Emergency Checklist" data-lang-hi="आपातकालीन चेकलिस्ट">
+                    Emergency Checklist
+                </a>
+                <a href="aleart.html" class="px-8 py-4 border border-white bg-transparent text-white rounded-full font-semibold transition-all duration-300 hover:bg-white hover:text-gray-900 hover:shadow-xl transform hover:scale-105 active:scale-95" data-lang-en="View Current Alerts" data-lang-hi="वर्तमान अलर्ट देखें">
+                    View Current Alerts
+                </a>
+            </div>
+        </div>
+
+        <!-- Heading and description for the three boxes -->
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4" data-lang-en="Understanding the Disaster Cycle" data-lang-hi="आपदा जीवन चक्र: तैयार रहें, सुरक्षित रहें, मज़बूत बनकर पुनर्निर्माण करें">Disaster Life Cycle: Be Ready, Stay Safe, Rebuild Stronger</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-en="Disaster management is a continuous cycle of preparedness, response, and recovery. Learn about each phase to build resilience in your community." data-lang-hi="आपदाएँ जीवन को तीन महत्वपूर्ण चरणों में प्रभावित करती हैं — आपदा से पहले, आपदा के दौरान और आपदा के बाद।
+तैयारी जोखिमों को कम करती है, त्वरित प्रतिक्रिया जीवन बचाती है, और पुनर्वास समुदायों को फिर से मज़बूत बनाता है।
+जागरूकता, कार्रवाई और एकता मिलकर त्रासदी को दृढ़ता में बदल सकती हैं।">
+                Disasters affect lives in three critical phases — before, during, and after. Preparedness helps reduce risks, quick response saves lives in the moment, and recovery brings communities back to strength. Together, awareness, action, and unity can turn tragedy into resilience.
+            </p>
+        </div>
+
+        <!-- The three disaster phase boxes -->
+        <div class="flex flex-col md:flex-row justify-center items-stretch space-y-6 md:space-y-0 md:space-x-8">
+
+            <!-- Before Disaster Box -->
+            <div class="rounded-3xl shadow-xl p-8 flex-1 flex flex-col justify-between transition-all duration-300 transform hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-blue-400 to-teal-500">
+                <div>
+                    <div class="flex justify-center mb-4 text-white text-4xl">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4 text-center" data-lang-en="Before Disaster" data-lang-hi="आपदा से पहले">Before Disaster</h2>
+                    <p class="text-gray-200 text-center mb-6" data-lang-en="Learn how to prepare before a disaster strikes. Follow safety guidelines, create an emergency kit, and stay informed about risks in your area to minimize impact." data-lang-hi="जानिए कैसे आपदा आने से पहले तैयारी करें। सुरक्षा दिशानिर्देशों का पालन करें, एक आपातकालीन किट तैयार रखें और अपने क्षेत्र में संभावित खतरों की जानकारी लेते रहें ताकि नुकसान को कम किया जा सके।">Proactive preparation is key. Learn how to create a family emergency plan, assemble a comprehensive kit, and secure your home to mitigate risks.</p>
+                </div>
+                <a href="before.html" class="learn-more-btn mt-6 w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 transform active:scale-95 shadow-md active:shadow-none bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700" data-lang-en="Learn More" data-lang-hi="और जानें">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- During Disaster Box -->
+            <div class="rounded-3xl shadow-xl p-8 flex-1 flex flex-col justify-between transition-all duration-300 transform hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-red-500 to-red-700">
+                <div>
+                    <div class="flex justify-center mb-4 text-white text-4xl">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4 text-center" data-lang-en="During Disaster" data-lang-hi="आपदा के दौरान">During Disaster</h2>
+                    <p class="text-gray-200 text-center mb-6" data-lang-en="Take immediate actions to ensure safety during a disaster. Request emergency help, send alerts, and follow step-by-step instructions to protect yourself and others." data-lang-hi="आपदा के दौरान सुरक्षा सुनिश्चित करने के लिए तुरंत कदम उठाएँ। आपातकालीन मदद माँगें, अलर्ट भेजें और चरण-दर-चरण निर्देशों का पालन करें ताकि स्वयं और दूसरों की रक्षा की जा सके।">During an event, safety is paramount. Follow key instructions for seeking shelter, communicating with loved ones, and administering immediate first aid.</p>
+                </div>
+                <a href="anotherduring.html" class="learn-more-btn mt-6 w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 transform active:scale-95 shadow-md active:shadow-none bg-white text-red-600 hover:bg-gray-100 hover:text-red-700" data-lang-en="Learn More" data-lang-hi="और जानें">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- After Disaster Box -->
+            <div class="rounded-3xl shadow-xl p-8 flex-1 flex flex-col justify-between transition-all duration-300 transform hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-green-500 to-green-700">
+                <div>
+                    <div class="flex justify-center mb-4 text-white text-4xl">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4 text-center" data-lang-en="After Disaster" data-lang-hi="आपदा के बाद">After Disaster</h2>
+                    <p class="text-gray-200 text-center mb-6" data-lang-en="Support rebuilding efforts after a disaster. Register as a volunteer, NGO, or charity to offer assistance and help affected communities recover faster." data-lang-hi="आपदा के बाद पुनर्निर्माण के प्रयासों का समर्थन करें। स्वयंसेवक, एनजीओ या चैरिटी के रूप में पंजीकरण करें, सहायता प्रदान करें और प्रभावित समुदायों को तेजी से उबरने में मदद करें।">Recovery is a critical phase. Find resources for reporting damages, seeking psychological support, and beginning the process of rebuilding your community.</p>
+                </div>
+                <a href="after.html" class="learn-more-btn mt-6 w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 transform active:scale-95 shadow-md active:shadow-none bg-white text-green-600 hover:bg-gray-100 hover:text-green-700" data-lang-en="Learn More" data-lang-hi="और जानें">
+                    Learn More
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-200 py-12 mt-12 animate-footer-entry">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-40 lg:gap-x-48 border-b border-gray-700 pb-8 mb-8">
+                
+                <!-- Section 1: Quick Links -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white mb-6" data-lang-en="Quick Links" data-lang-hi="त्वरित लिंक">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="Home" data-lang-hi="घर">Home</a></li>
+                        <li><a href="aleart.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="Alerts" data-lang-hi="अलर्ट">Alerts</a></li>
+                        <li><a href="preguides.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="Preparedness Guides" data-lang-hi="तैयारी गाइड">Preparedness Guides</a></li>
+                        <li><a href="resource.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="Resources" data-lang-hi="संसाधन">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 2: Contact Us & Social -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white mb-6" data-lang-en="Contact Us" data-lang-hi="हमसे संपर्क करें">Contact Us</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <a href="mailto:contact@surakshasetu.org" class="hover:text-blue-400 transition-colors duration-300">contact@surakshasetu.org</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <a href="tel:+911234567890" class="hover:text-blue-400 transition-colors duration-300">+91 123 456 7890</a>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-6 justify-center md:justify-start">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transform hover:scale-125 transition-all duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transform hover:scale-125 transition-all duration-300">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transform hover:scale-125 transition-all duration-300">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transform hover:scale-125 transition-all duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Section 3: About & Legal -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white mb-6" data-lang-en="About & Legal" data-lang-hi="हमारे बारे में और कानूनी">About & Legal</h3>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="About Us" data-lang-hi="हमारे बारे में">About Us</a></li>
+                        <li><a href="about.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="Privacy Policy" data-lang-hi="गोपनीयता नीति">Privacy Policy</a></li>
+                        <li><a href="about.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="Terms of Service" data-lang-hi="सेवा की शर्तें">Terms of Service</a></li>
+                        <li><a href="about.html" class="hover:text-blue-400 transition-colors duration-300 transform hover:translate-x-1 inline-block" data-lang-en="Disclaimer" data-lang-hi="अस्वीकरण">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="text-center text-gray-500 text-sm">
+                <p data-lang-en="&copy; 2024 Suraksha Setu. All Rights Reserved." data-lang-hi="&copy; 2024 सुरक्षा सेतु। सर्वाधिकार सुरक्षित।">&copy; 2024 Suraksha Setu. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        const languageSelect = document.getElementById('language-select');
+        const allTranslatableElements = document.querySelectorAll('[data-lang-en]');
+        const htmlElement = document.documentElement;
+
+        languageSelect.addEventListener('change', (event) => {
+            const selectedLanguage = event.target.value;
+            htmlElement.lang = selectedLanguage;
+
+            allTranslatableElements.forEach(element => {
+                const translationKey = `data-lang-${selectedLanguage}`;
+                const newText = element.getAttribute(translationKey);
+                
+                // If the element is an input or has an innerHTML (like <a>), handle differently
+                if (element.tagName === 'A' || element.tagName === 'BUTTON') {
+                    element.textContent = newText;
+                } else if (element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'P' || element.tagName === 'SPAN' || element.tagName === 'LI') {
+                    element.textContent = newText;
+                } else if (element.tagName === 'TITLE') {
+                    document.title = newText;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
